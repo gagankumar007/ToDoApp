@@ -54,15 +54,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private fun login() {
 
         if (TextUtils.isEmpty(binding.edtEmail.text.toString())) {
-            binding.edtEmail.setError("Email is Required")
+            binding.edtEmail.error = "Email is Required"
             return
         }
         if (TextUtils.isEmpty(binding.edtPassword.text.toString())) {
-            binding.edtPassword.setError("password is Required")
+            binding.edtPassword.error = "password is Required"
             return
         }
         if (binding.edtPassword.text.toString().length < 6) {
-            binding.edtPassword.setError("password must be 6 or more Characters long")
+            binding.edtPassword.error = "password must be 6 or more Characters long"
             return
         }
         mAuth.signInWithEmailAndPassword(
